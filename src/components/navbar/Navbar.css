@@ -1,0 +1,139 @@
+.navbar {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 90vh;
+  z-index: 1;
+}
+
+.navbar-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 60px;
+  background: #7c4e80;
+  border-radius: 10px;
+}
+
+.navbar-navigation ul {
+  display: flex;
+}
+
+.navbar-navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+
+.navbar-navigation ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 75%;
+  text-align: center;
+}
+
+.navbar-navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.3em;
+  text-align: center;
+  transition: 0.5s;
+  color: var(--clr);
+}
+
+.navbar-navigation ul li.active a .icon {
+  transform: translateY(-35px);
+}
+
+.navbar-navigation ul li a .text {
+  position: absolute;
+  color: var(--clr);
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: 0.4s;
+  opacity: 0;
+  transform: translate(50px, 20px);
+}
+
+.navbar-navigation ul li.active a .text {
+  opacity: 1;
+  transform: translateY(5px);
+}
+
+.indicator {
+  position: absolute;
+  top: -50%;
+  width: 50px;
+  height: 50px;
+  background: #63a8c6;
+  border-radius: 50%;
+  border: 6px solid var(--clr);
+  transition: 0.4s;
+  left: auto;
+}
+
+/* .navbar-navigation ul li:nth-child(1).active ~ .indicator {
+  transform: translateX(calc(10px * 0));
+} */
+.navbar-navigation ul li:nth-child(2).active ~ .indicator {
+  transform: translateX(calc(70px * 0));
+}
+.navbar-navigation ul li:nth-child(3).active ~ .indicator {
+  transform: translateX(calc(70px * 1));
+}
+
+.navbar-button {
+  position: absolute;
+  color: var(--clr);
+  top: 20px;
+  left: 90%;
+  border: none;
+  background: #7c4e80;
+}
+
+@media screen and (min-width: 420px) {
+  .navbar {
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    top: 5vh;
+  }
+
+  .navbar-navigation ul li.active a .icon {
+    transform: translateY(22px);
+  }
+
+  .navbar-navigation ul li.active a .text {
+    opacity: 1;
+    transform: translateY(-18px);
+    line-height: 1;
+  }
+
+  .indicator {
+    position: block;
+    top: 50%;
+    left: auto;
+  }
+
+  .navbar-navigation ul li:nth-child(1).active ~ .indicator {
+    transform: translateX(calc(2px * 1));
+  }
+
+  .navbar-navigation ul li:nth-child(2).active ~ .indicator {
+    transform: translateX(calc(72px * 1));
+  }
+  .navbar-navigation ul li:nth-child(3).active ~ .indicator {
+    transform: translateX(calc(70px * 2));
+  }
+
+  .navbar-button {
+    display: none;
+  }
+}
